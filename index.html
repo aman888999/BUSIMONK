@@ -1477,19 +1477,26 @@
                         </div>
                         <!-- Footer Links end -->
                     </div>
-
                     <div class="col-lg-4">
                         <!-- Footer Newsletter Form Start -->
                         <div class="footer-newsletter-form">
-                            <h3>Subscribe our newsletter</h3>
-                            <form id="newslettersForm" action="#" method="POST">
+                            <h3>Subscribe to our newsletter</h3>
+                            <form id="newslettersForm">
                                 <div class="form-group">
-                                    <input type="email" name="mail" class="form-control" id="mail"
-                                        placeholder="Enter your email" required>
-                                    <button type="submit" class="btn-highlighted">subscribe</button>
+                                    <label for="mail" class="sr-only">Email Address</label>
+                                    <input 
+                                        type="email" 
+                                        name="mail" 
+                                        class="form-control" 
+                                        id="mail" 
+                                        placeholder="Enter your email" 
+                                        required>
+                                    <button type="button" id="saveData" class="btn btn-primary btn-highlighted">Subscribe</button>
                                 </div>
                             </form>
                         </div>
+                    </div>
+                    
                         <!-- Footer Newsletter Form End -->
 
                         <!-- Footer Social Link Start -->
@@ -1554,6 +1561,7 @@
     <!-- Text Effect js file -->
     <script src="/assets/js/SplitText.js"></script>
     <script src="/assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/excel.js"></script>
     <!-- YTPlayer js File -->
     <script src="/assets/js/jquery.mb.YTPlayer.min.js"></script>
     <!-- Typed js file -->
@@ -1562,6 +1570,8 @@
     <script src="/assets/js/wow.js"></script>
     <!-- Main Custom js file -->
     <script src="/assets/js/function.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
     <!-- <script src="../../assets//assets/js/theme-panel.js"></script> -->
 </body>
 
