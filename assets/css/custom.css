@@ -204,7 +204,7 @@ body{
 	background: transparent;
 	color: var(--primary-color);
 	border-radius: 100px;
-	padding: 14px 25px;
+	padding: 10px 5px;
 	margin-right: 50px;
 	border: none;
 	backdrop-filter: blur(20px);
@@ -2787,7 +2787,7 @@ body:has(.offcanvas){
 	color: var(--accent-color);
 }
 
-.footer-newsletter-form .form-group{
+.footer-newsletter-form .{
 	position: relative;
 	display: flex;
 	align-items: center;
