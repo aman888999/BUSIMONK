@@ -1481,36 +1481,14 @@
                         <!-- Footer Newsletter Form Start -->
                         <div class="footer-newsletter-form">
                             <h3>Subscribe to our newsletter</h3>
-                            <form id="newslettersForm">
+                            <form id="newslettersForm" onsubmit="saveEmail(event)">
                                 <div class="form-group">
-                                    <label for="mail" class="sr-only">Email Address</label>
-                                    <input 
-                                        type="email" 
-                                        name="mail" 
-                                        class="form-control" 
-                                        id="mail" 
-                                        placeholder="Enter your email" 
-                                        required>
-                                    <button type="button" id="saveData" class="btn btn-primary btn-highlighted">Subscribe</button>
+                                    <input type="email" name="mail" id="mail" class="form-control" placeholder="Enter your email" required>
+                                    <button type="submit" class="btn-highlighted">Subscribe</button>
                                 </div>
                             </form>
                         </div>
-                    </div>
-                    
-                        <!-- Footer Newsletter Form End -->
-
-                        <!-- Footer Social Link Start -->
-                        <div class="footer-social-links">
-                            <!-- <ul>
-                                    <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
-                                      <li><a href="https://www.twitter.com/"><i class="fa-brands fa-twitter"></i></a></li>
-                                      <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                      <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul> -->
-                        </div>
-                        <!-- Footer Social Link End -->
-                    </div>
-                </div>
+                      </div>
 
                 <!-- Footer Copyright Section Start -->
                 <div class="footer-copyright">
@@ -1572,6 +1550,9 @@
     <script src="/assets/js/function.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  
     <!-- <script src="../../assets//assets/js/theme-panel.js"></script> -->
 </body>
 

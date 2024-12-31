@@ -1,27 +1,35 @@
-document.getElementById('saveData').addEventListener('click', function () {
-    // Get email value
-    const email = document.getElementById('mail').value;
+document.getElementById('fileForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
 
-    if (email === "") {
-        alert("Please enter your email!");
-        return;
-    }
+  const fileInput = document.getElementById('fileUpload');
+  const newContentInput = document.getElementById('newContent');
 
-    // Prepare data for the Excel sheet
-    const data = [
-        ["Email"],  // Column headers
-        [email]     // User email
-    ];
+  const file = fileInput.files[0];
+  const newContent = newContentInput.value;
 
-    // Create a new workbook and worksheet
-    const workbook = XLSX.utils.book_new();
-    const worksheet = XLSX.utils.aoa_to_sheet(data);
+  if (!file || !newContent) {
+      alert("Please provide both a text file and new content.");
+      return;
+  }
 
-    // Append worksheet to workbook
-    XLSX.utils.book_append_sheet(workbook, worksheet, "Newsletter");
+  // Read the uploaded text file
+  const reader = new FileReader();
+  reader.onload = function(event) {
+      const fileContent = event.target.result;
 
-    // Save the file
-    XLSX.writeFile(workbook, "Newsletter_Data.xlsx");
-    
-    // alert("Data saved locally to Excel sheet!");
+      // Modify the content by appending new content
+      const modifiedContent = fileContent + "\n" + newContent;
+
+      // Create a Blob from the modified content
+      const blob = new Blob([modifiedContent], { type: 'text/plain' });
+
+      // Create a download link for the modified file
+      const downloadLink = document.getElementById('downloadLink');
+      downloadLink.href = URL.createObjectURL(blob);
+      downloadLink.download = 'modified_file.txt'; // Filename for the modified file
+      downloadLink.style.display = 'block'; // Show the download link
+      downloadLink.textContent = "Download Modified File";
+  };
+
+  reader.readAsText(file); // Read the file as text
 });
